@@ -9,9 +9,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/endorlabs/spdx-sbom-generator/pkg/models"
 	"github.com/stretchr/testify/assert"
-
-	"github.com/spdx/spdx-sbom-generator/pkg/models"
 )
 
 func TestYarn(t *testing.T) {
@@ -134,9 +133,13 @@ func TestListAllModules(t *testing.T) {
 			count++
 			continue
 		}
+		if mod.Name == "@babel/core" {
+			count++
+			continue
+		}
 	}
 
-	assert.Equal(t, 3, count)
+	assert.Equal(t, 4, count)
 }
 
 func getPath() string {

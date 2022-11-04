@@ -203,7 +203,7 @@ func (m *yarn) buildDependencies(path string, deps []dependency) ([]models.Modul
 			mod.Modules = map[string]*models.Module{}
 			for _, depD := range d.Dependencies {
 				ar := strings.Split(strings.TrimSpace(depD), " ")
-				name := strings.TrimPrefix(strings.TrimSuffix(strings.TrimPrefix(ar[0], "\""), "\""), "@")
+				name := strings.TrimSuffix(strings.TrimPrefix(ar[0], "\""), "\"")
 				if name == "optionalDependencies:" {
 					continue
 				}
@@ -321,7 +321,7 @@ func readLockFile(path string) ([]dependency, error) {
 			name = strings.TrimSuffix(name, ":")
 
 			dep.PkPath = strings.TrimSuffix(name, "\"")
-			name = strings.TrimPrefix(name, "@")
+			//name = strings.TrimPrefix(name, "@")
 
 			dep.Name = name
 			p = append(p, dep)
@@ -386,7 +386,7 @@ func appendNestedDependencies(deps []dependency) []dependency {
 		if len(d.Dependencies) > 0 {
 			for _, depD := range d.Dependencies {
 				ar := strings.Split(strings.TrimSpace(depD), " ")
-				name := strings.TrimPrefix(strings.TrimSuffix(strings.TrimPrefix(ar[0], "\""), "\""), "@")
+				name := strings.TrimSuffix(strings.TrimPrefix(ar[0], "\""), "\"")
 				if name == "optionalDependencies:" {
 					continue
 				}
