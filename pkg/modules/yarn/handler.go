@@ -288,7 +288,7 @@ func readLockFile(path string) ([]dependency, error) {
 		if isPk {
 			if strings.HasPrefix(text, "  version ") {
 				p[i].Version = strings.TrimSuffix(strings.TrimPrefix(strings.TrimPrefix(text, "  version "), "\""), "\"")
-				n := p[i].Name[:strings.Index(p[i].Name, "@")]
+				n := p[i].Name
 				p[i].Name = n
 				p[i].PkPath = p[i].PkPath[:strings.LastIndex(p[i].PkPath, "@")]
 				continue
