@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/spdx/spdx-sbom-generator/pkg/helper"
+	"github.com/endorlabs/spdx-sbom-generator/pkg/helper"
 )
 
 // use newGradleExec to instantiate
