@@ -208,12 +208,11 @@ func (m *npm) buildDependencies(path string, deps map[string]interface{}) ([]mod
 
 	allDeps := appendNestedDependencies(deps)
 	for key, dd := range allDeps {
-		depName := strings.TrimPrefix(key, "@")
 		for nkey := range dd {
 			var mod models.Module
 			mod.Version = strings.TrimSpace(strings.TrimPrefix(strings.TrimPrefix(strings.TrimPrefix(strings.TrimPrefix(nkey, "^"), "~"), ">"), "="))
 			mod.Version = strings.Split(mod.Version, " ")[0]
-			mod.Name = depName
+			mod.Name = key
 
 			r := ""
 			if _, ok := dd[nkey].(map[string]interface{}); ok {
@@ -314,7 +313,6 @@ func getLicenseFile(path string) string {
 func getPackageDependencies(modDeps map[string]interface{}, t string) map[string]*models.Module {
 	m := make(map[string]*models.Module)
 	for k, v := range modDeps {
-		name := strings.TrimPrefix(k, "@")
 		version := ""
 		if t == "dependencies" {
 			version = strings.TrimPrefix(v.(map[string]interface{})["version"].(string), "^")
@@ -323,9 +321,9 @@ func getPackageDependencies(modDeps map[string]interface{}, t string) map[string
 			version = strings.TrimPrefix(v.(string), "^")
 		}
 		m[k] = &models.Module{
-			Name:     name,
+			Name:     k,
 			Version:  version,
-			CheckSum: &models.CheckSum{Content: []byte(fmt.Sprintf("%s-%s", name, version))},
+			CheckSum: &models.CheckSum{Content: []byte(fmt.Sprintf("%s-%s", k, version))},
 		}
 	}
 	return m
