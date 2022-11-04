@@ -208,7 +208,16 @@ func (m *npm) buildDependencies(path string, deps map[string]interface{}) ([]mod
 
 	allDeps := appendNestedDependencies(deps)
 	for key, dd := range allDeps {
-		depName := strings.TrimPrefix(key, "node_modules/")
+		depName := ""
+		if strings.Contains(key, "node_modules/") {
+			depName = key[strings.LastIndex(key, "node_modules/")+13:]
+		} else {
+			depName = key
+		}
+
+		if depName == "" {
+			continue
+		}
 		for nkey := range dd {
 			var mod models.Module
 			mod.Version = strings.TrimSpace(strings.TrimPrefix(strings.TrimPrefix(strings.TrimPrefix(strings.TrimPrefix(nkey, "^"), "~"), ">"), "="))
