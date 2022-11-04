@@ -10,7 +10,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/spdx/spdx-sbom-generator/pkg/reader"
+	"github.com/endorlabs/spdx-sbom-generator/pkg/reader"
 )
 
 func TestGetCopyright(t *testing.T) {

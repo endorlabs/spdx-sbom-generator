@@ -5,7 +5,7 @@ package composer
 import (
 	"strings"
 
-	"github.com/spdx/spdx-sbom-generator/pkg/helper"
+	"github.com/endorlabs/spdx-sbom-generator/pkg/helper"
 )
 
 type command string

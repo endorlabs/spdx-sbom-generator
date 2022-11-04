@@ -17,8 +17,8 @@ import (
 
 	"github.com/vifraa/gopom"
 
-	"github.com/spdx/spdx-sbom-generator/pkg/helper"
-	"github.com/spdx/spdx-sbom-generator/pkg/models"
+	"github.com/endorlabs/spdx-sbom-generator/pkg/helper"
+	"github.com/endorlabs/spdx-sbom-generator/pkg/models"
 )
 
 // RepositoryUrl is the repository url

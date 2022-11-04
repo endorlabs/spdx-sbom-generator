@@ -3,8 +3,8 @@
 package models
 
 // Package
-// JSON tags annotated from official example (https://github.com/spdx/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
-// and official schema (https://github.com/spdx/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json)
+// JSON tags annotated from official example (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
+// and official schema (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json)
 type Package struct {
 	PackageName             string            `json:"name,omitempty"`
 	SPDXID                  string            `json:"SPDXID,omitempty"`
@@ -23,8 +23,8 @@ type Package struct {
 }
 
 // Document
-// JSON tags annotated from official example (https://github.com/spdx/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
-// and official schema (https://github.com/spdx/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
+// JSON tags annotated from official example (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
+// and official schema (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
 type Document struct {
 	SPDXVersion             string                   `json:"spdxVersion,omitempty"`
 	DataLicense             string                   `json:"dataLicense,omitempty"`
@@ -38,8 +38,8 @@ type Document struct {
 }
 
 // CreationInfo
-// JSON tags annotated from official example (https://github.com/spdx/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
-// and official schema (https://github.com/spdx/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
+// JSON tags annotated from official example (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
+// and official schema (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
 type CreationInfo struct {
 	Comment            string   `json:"comment,omitempty"`
 	Created            string   `json:"created,omitempty"`
@@ -48,8 +48,8 @@ type CreationInfo struct {
 }
 
 // Relationship
-// JSON tags annotated from official example (https://github.com/spdx/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
-// and official schema (https://github.com/spdx/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
+// JSON tags annotated from official example (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
+// and official schema (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
 type Relationship struct {
 	SPDXElementID      string `json:"spdxElementId,omitempty"`
 	RelatedSPDXElement string `json:"relatedSpdxElement,omitempty"`
@@ -57,8 +57,8 @@ type Relationship struct {
 }
 
 // ExtractedLicensingInfo
-// JSON tags annotated from official example (https://github.com/spdx/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
-// and official schema (https://github.com/spdx/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
+// JSON tags annotated from official example (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
+// and official schema (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
 type ExtractedLicensingInfo struct {
 	LicenseID      string `json:"licenseId,omitempty"`
 	ExtractedText  string `json:"extractedText,omitempty"`
@@ -67,8 +67,8 @@ type ExtractedLicensingInfo struct {
 }
 
 // PackageChecksum
-// JSON tags annotated from official example (https://github.com/spdx/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
-// and official schema (https://github.com/spdx/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
+// JSON tags annotated from official example (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/examples/SPDXJSONExample-v2.2.spdx.json)
+// and official schema (https://github.com/endorlabs/spdx-spec/blob/v2.2.2/schemas/spdx-schema.json
 type PackageChecksum struct {
 	Algorithm HashAlgorithm `json:"algorithm"`
 	Value     string        `json:"checksumValue"`

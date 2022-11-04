@@ -6,8 +6,8 @@ import (
 	"bytes"
 	"path/filepath"
 
-	"github.com/spdx/spdx-sbom-generator/pkg/helper"
-	"github.com/spdx/spdx-sbom-generator/pkg/models"
+	"github.com/endorlabs/spdx-sbom-generator/pkg/helper"
+	"github.com/endorlabs/spdx-sbom-generator/pkg/models"
 )
 
 // New ...
